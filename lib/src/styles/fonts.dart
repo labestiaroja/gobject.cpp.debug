@@ -6,3 +6,9 @@ final TextStyle kIntroTextStyle = GoogleFonts.redHatMono(
   fontWeight: FontWeight.w400,
   color: Colors.blueGrey.shade50,
 );
+
+final TextStyle kControlButtonTextStyle = GoogleFonts.redHatMono(
+  fontSize: 14.0,
+  fontWeight: FontWeight.w400,
+  color: Colors.blueGrey.shade50,
+);
