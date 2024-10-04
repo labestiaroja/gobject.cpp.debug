@@ -15,9 +15,8 @@ G_DECLARE_FINAL_TYPE(GobjdebugDebugServiceHostApiResponseHandle, gobjdebug_debug
  *
  * Table of functions exposed by DebugServiceHostApi to be implemented by the API provider.
  */
-typedef struct
-{
-  void (*get_hostname)(GobjdebugDebugServiceHostApiResponseHandle *response_handle, gpointer user_data);
+typedef struct {
+  void (*get_hostname)(GobjdebugDebugServiceHostApiResponseHandle* response_handle, gpointer user_data);
 } GobjdebugDebugServiceHostApiVTable;
 
 /**
@@ -31,7 +30,7 @@ typedef struct
  *
  * Connects the method handlers in the DebugServiceHostApi API.
  */
-void gobjdebug_debug_service_host_api_set_method_handlers(FlBinaryMessenger *messenger, const gchar *suffix, const GobjdebugDebugServiceHostApiVTable *vtable, gpointer user_data, GDestroyNotify user_data_free_func);
+void gobjdebug_debug_service_host_api_set_method_handlers(FlBinaryMessenger* messenger, const gchar* suffix, const GobjdebugDebugServiceHostApiVTable* vtable, gpointer user_data, GDestroyNotify user_data_free_func);
 
 /**
  * gobjdebug_debug_service_host_api_clear_method_handlers:
@@ -41,16 +40,16 @@ void gobjdebug_debug_service_host_api_set_method_handlers(FlBinaryMessenger *mes
  *
  * Clears the method handlers in the DebugServiceHostApi API.
  */
-void gobjdebug_debug_service_host_api_clear_method_handlers(FlBinaryMessenger *messenger, const gchar *suffix);
+void gobjdebug_debug_service_host_api_clear_method_handlers(FlBinaryMessenger* messenger, const gchar* suffix);
 
 /**
  * gobjdebug_debug_service_host_api_respond_get_hostname:
  * @response_handle: a #GobjdebugDebugServiceHostApiResponseHandle.
  * @return_value: location to write the value returned by this method.
  *
- * Responds to DebugServiceHostApi.getHostname.
+ * Responds to DebugServiceHostApi.getHostname. 
  */
-void gobjdebug_debug_service_host_api_respond_get_hostname(GobjdebugDebugServiceHostApiResponseHandle *response_handle, const gchar *return_value);
+void gobjdebug_debug_service_host_api_respond_get_hostname(GobjdebugDebugServiceHostApiResponseHandle* response_handle, const gchar* return_value);
 
 /**
  * gobjdebug_debug_service_host_api_respond_error_get_hostname:
@@ -59,9 +58,9 @@ void gobjdebug_debug_service_host_api_respond_get_hostname(GobjdebugDebugService
  * @message: error message.
  * @details: (allow-none): error details or %NULL.
  *
- * Responds with an error to DebugServiceHostApi.getHostname.
+ * Responds with an error to DebugServiceHostApi.getHostname. 
  */
-void gobjdebug_debug_service_host_api_respond_error_get_hostname(GobjdebugDebugServiceHostApiResponseHandle *response_handle, const gchar *code, const gchar *message, FlValue *details);
+void gobjdebug_debug_service_host_api_respond_error_get_hostname(GobjdebugDebugServiceHostApiResponseHandle* response_handle, const gchar* code, const gchar* message, FlValue* details);
 
 G_DECLARE_FINAL_TYPE(GobjdebugDebugServiceFlutterApiGetHostnameResponse, gobjdebug_debug_service_flutter_api_get_hostname_response, GOBJDEBUG, DEBUG_SERVICE_FLUTTER_API_GET_HOSTNAME_RESPONSE, GObject)
 
@@ -73,7 +72,7 @@ G_DECLARE_FINAL_TYPE(GobjdebugDebugServiceFlutterApiGetHostnameResponse, gobjdeb
  *
  * Returns: a %TRUE if this response is an error.
  */
-gboolean gobjdebug_debug_service_flutter_api_get_hostname_response_is_error(GobjdebugDebugServiceFlutterApiGetHostnameResponse *response);
+gboolean gobjdebug_debug_service_flutter_api_get_hostname_response_is_error(GobjdebugDebugServiceFlutterApiGetHostnameResponse* response);
 
 /**
  * gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_code:
@@ -83,7 +82,7 @@ gboolean gobjdebug_debug_service_flutter_api_get_hostname_response_is_error(Gobj
  *
  * Returns: an error code or %NULL if not an error.
  */
-const gchar *gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_code(GobjdebugDebugServiceFlutterApiGetHostnameResponse *response);
+const gchar* gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_code(GobjdebugDebugServiceFlutterApiGetHostnameResponse* response);
 
 /**
  * gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_message:
@@ -93,7 +92,7 @@ const gchar *gobjdebug_debug_service_flutter_api_get_hostname_response_get_error
  *
  * Returns: an error message.
  */
-const gchar *gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_message(GobjdebugDebugServiceFlutterApiGetHostnameResponse *response);
+const gchar* gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_message(GobjdebugDebugServiceFlutterApiGetHostnameResponse* response);
 
 /**
  * gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_details:
@@ -103,7 +102,7 @@ const gchar *gobjdebug_debug_service_flutter_api_get_hostname_response_get_error
  *
  * Returns: (allow-none): an error details or %NULL.
  */
-FlValue *gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_details(GobjdebugDebugServiceFlutterApiGetHostnameResponse *response);
+FlValue* gobjdebug_debug_service_flutter_api_get_hostname_response_get_error_details(GobjdebugDebugServiceFlutterApiGetHostnameResponse* response);
 
 /**
  * GobjdebugDebugServiceFlutterApi:
@@ -121,7 +120,7 @@ G_DECLARE_FINAL_TYPE(GobjdebugDebugServiceFlutterApi, gobjdebug_debug_service_fl
  *
  * Returns: a new #GobjdebugDebugServiceFlutterApi
  */
-GobjdebugDebugServiceFlutterApi *gobjdebug_debug_service_flutter_api_new(FlBinaryMessenger *messenger, const gchar *suffix);
+GobjdebugDebugServiceFlutterApi* gobjdebug_debug_service_flutter_api_new(FlBinaryMessenger* messenger, const gchar* suffix);
 
 /**
  * gobjdebug_debug_service_flutter_api_get_hostname:
@@ -132,7 +131,7 @@ GobjdebugDebugServiceFlutterApi *gobjdebug_debug_service_flutter_api_new(FlBinar
  * @user_data: (closure): user data to pass to @callback.
  *
  */
-void gobjdebug_debug_service_flutter_api_get_hostname(GobjdebugDebugServiceFlutterApi *api, const gchar *response, GCancellable *cancellable, GAsyncReadyCallback callback, gpointer user_data);
+void gobjdebug_debug_service_flutter_api_get_hostname(GobjdebugDebugServiceFlutterApi* api, const gchar* response, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 
 /**
  * gobjdebug_debug_service_flutter_api_get_hostname_finish:
@@ -144,8 +143,8 @@ void gobjdebug_debug_service_flutter_api_get_hostname(GobjdebugDebugServiceFlutt
  *
  * Returns: a #GobjdebugDebugServiceFlutterApiGetHostnameResponse or %NULL on error.
  */
-GobjdebugDebugServiceFlutterApiGetHostnameResponse *gobjdebug_debug_service_flutter_api_get_hostname_finish(GobjdebugDebugServiceFlutterApi *api, GAsyncResult *result, GError **error);
+GobjdebugDebugServiceFlutterApiGetHostnameResponse* gobjdebug_debug_service_flutter_api_get_hostname_finish(GobjdebugDebugServiceFlutterApi* api, GAsyncResult* result, GError** error);
 
 G_END_DECLS
 
-#endif // PIGEON_DEBUG_SERVICE_G_H_
+#endif  // PIGEON_DEBUG_SERVICE_G_H_
